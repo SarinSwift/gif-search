@@ -1,0 +1,17 @@
+<!-- home.handlebars -->
+
+
+
+<h1>Search for gifs</h1>
+
+<!-- When you want to make a request from the client side -->
+<form action="/">
+    <input type="text" name="term">
+    <button type="submit">Search</button>
+</form>
+
+<!-- Use this #each to iterate over the array of gifs that giphy has returned -->
+{{#each gifs}}
+    <!-- Access each giphy image and use the fixed_height so all the gifs are the same height-->
+    <img src="{{this.images.fixed_height.url}}">
+{{/each}}
